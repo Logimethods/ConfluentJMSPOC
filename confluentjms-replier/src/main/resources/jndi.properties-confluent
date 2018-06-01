@@ -1,0 +1,17 @@
+java.naming.factory.initial = io.confluent.kafka.jms.KafkaInitialContextFactory
+
+# JMS Client properties
+
+client.id = testing-01
+zookeeper.connect = localhost:2181
+bootstrap.servers = localhost:9092
+
+# Register queues in JNDI using the form:
+#   queue.[jndiName] = [physicalName]
+
+# Register topics in JNDI using the form:
+#   topic.[jndiName] = [physicalName]
+
+queue.request-queue = request-queue
+queue.reply-queue = reply-queue
+queue.invalid-queue = invalid-queue
