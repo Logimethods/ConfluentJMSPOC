@@ -17,4 +17,4 @@
 
 ### Note on implementation:
 
-For some reason, Kafka desides to drop some commonly used JMS Headers such as correlation ID and reply To fields. In order to work around this, the messages have been sent has MapMessages instead of typical TextMessages. Within my map, I have embedded my custom correlationID and replyTo fields. This way I can implement request reply semantics with confluent even though the fields are dropped.
+For some reason, Kafka desides to drop some commonly used JMS Headers such as correlationID and replyTo fields. In order to work around this, the messages have been sent has MapMessages instead of typical TextMessages. Within my map, I have embedded my custom correlationID and replyTo fields. This way I can implement request reply semantics with confluent even though the fields are dropped.
