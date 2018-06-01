@@ -33,7 +33,7 @@ public class App {
             Requestor myRequestor = Requestor.newRequestor(session, requestQueue, replyQueue, invalidQueue, ctx);
           
             myRequestor.send();
-            Thread.sleep(2000);
+            
 
             while(true){
                 myRequestor.receiveSync();
