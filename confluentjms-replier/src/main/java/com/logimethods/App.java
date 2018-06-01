@@ -32,7 +32,7 @@ public class App {
             
             Replier myReplier = Replier.newReplier(session, requestQueue, invalidQueue, ctx);
     
-            Thread.sleep(2000);
+            
             while (true) {
                 myReplier.reply();
               
