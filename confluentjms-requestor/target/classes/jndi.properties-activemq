@@ -1,10 +1,7 @@
-java.naming.factory.initial = io.confluent.kafka.jms.KafkaInitialContextFactory
+java.naming.factory.initial = org.apache.activemq.jndi.ActiveMQInitialContextFactory
 
-# JMS Client properties
-
-client.id = testing-01
-zookeeper.connect = localhost:2181
-bootstrap.servers = localhost:9092
+# use the following property to configure the default connector
+java.naming.provider.url = tcp://localhost:61616
 
 # Register queues in JNDI using the form:
 #   queue.[jndiName] = [physicalName]

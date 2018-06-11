@@ -32,7 +32,8 @@ public class App {
         try {
             Requestor myRequestor = Requestor.newRequestor(session, requestQueue, replyQueue, invalidQueue, ctx);
           
-            myRequestor.send();
+            myRequestor.send(false); //textMessage = false, mapMessage = true
+            //myRequestor.send(true); //textMessage = true, mapMessage = false
             
 
             while(true){
