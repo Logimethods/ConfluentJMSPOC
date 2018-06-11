@@ -17,4 +17,6 @@
 
 ### Note on implementation:
 
-For some reason, Kafka desides to drop some commonly used JMS Headers such as correlationID and replyTo fields. In order to work around this, the messages have been sent has MapMessages instead of typical TextMessages. Within my map, I have embedded my custom correlationID and replyTo fields. This way I can implement request reply semantics with confluent even though the fields are dropped.
+For some reason, Kafka desides to drop some commonly used JMS Headers such as correlationID and replyTo fields. In order to work around this, the messages have been sent has MapMessages instead of typical TextMessages. Within my map, I have embedded my custom correlationID and replyTo fields. This way I can implement request reply semantics with confluent even though the fields are dropped. 
+
+To use a TextMessage instead of a MapMessage, go to `/confluentjms-requestor/src/main/java/com/logimethods/App.java` and comment out line 35 and uncomment line 36. This change will not effect the program at all if you are using the ActiveMQ properties file. If you are using the confluent properties file the replier will send the message to Invalid queue since both the correlation Id and reply-to fields will be null!
