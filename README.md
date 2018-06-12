@@ -7,13 +7,13 @@
 4. In a second terminal `cd confluentjms-requestor` and `mvn clean package`
 5. In the first terminal, start the replier `mvn exec:java`
 6. In the second terminal, start the requestor `mvn exec:java`
-7. The request `Hello World` is sent to an activemq queue, which is picked up by the replier and sent back to the requestor. Notice the matching correlation Ids.
-8. Now, you can run both the same demo in Confluent/Kafka by simply changing the JNDI properties file.
+7. The request `Hello World` is sent to a Confluent topic, which is picked up by the replier and sent back to the requestor. Notice the matching correlation Ids.
+8. Now, you can run both the same demo in ActiveMQ by simply changing the JNDI properties file.
 9. Stop both the requestor and replier with `ctrl+c`
-9. In both confluentjms-replier confluentjms-requestor and  directories, cd into ./src/main/resources
-10. rename `jndi.properties` to any other name, ex: `jndi.properties-activemq`
-11. rename `jndi.properties-confluent` to `jndi.properties`
-12. Now re-run both the requestor and the replier and notice the same result, the broker was changed without changing any code besides the `jndi.properties` file!
+9. In **both** `/confluentjms-replier` and `confluentjms-requestor` directories, cd into `./src/main/resources`
+10. rename `jndi.properties` to any other name, ex: `jndi.properties-confluent`
+11. rename `jndi.properties-activemq` to `jndi.properties`
+12. Now re-run both the requestor and the replier and notice the same result, the broker was changed without changing any code besides the `jndi.properties` file! (Note that the requester/replier by default look for a file called `jndi.properties` in the classpath, so the program uses the file with that name and ignores the other one).
 
 ### Note on implementation:
 
